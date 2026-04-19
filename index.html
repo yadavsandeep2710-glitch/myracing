@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveMaster Academy | Learn to Drive Step-by-Step</title>
+    <meta name="description" content="Master the art of car driving with DriveMaster Academy. Step-by-step interactive lessons with animations and premium graphics.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">DRIVE<span>MASTER</span></div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#lessons">Lessons</a>
+                <a href="#interactive">Simulator</a>
+                <button class="btn-primary">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="reveal-text">Master the <span>Road.</span></h1>
+            <p class="hero-subtitle">Step-by-step interactive driving education redefined with high-end animations and cinematic precision.</p>
+            <div class="hero-ctas">
+                <a href="#lessons" class="btn-main">Start Learning</a>
+                <a href="#interactive" class="btn-secondary">Explore Simulator</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="lessons" class="lessons">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Learning Roadmap</h2>
+                <p>Your journey from beginner to professional driver starts here.</p>
+            </div>
+            <div class="roadmap">
+                <div class="roadmap-track"></div>
+                <div class="step-card" data-step="1">
+                    <div class="step-number">01</div>
+                    <h3>The Cockpit Drill</h3>
+                    <p>Safety first. Master the art of seat, mirror, and seatbelt adjustment.</p>
+                </div>
+                <div class="step-card" data-step="2">
+                    <div class="step-number">02</div>
+                    <h3>Pedal Mastery</h3>
+                    <p>Understanding the delicate balance between the accelerator and the brake.</p>
+                </div>
+                <div class="step-card" data-step="3">
+                    <div class="step-number">03</div>
+                    <h3>Control Center</h3>
+                    <p>Navigating the dashboard and mastering the steering wheel motion.</p>
+                </div>
+                <div class="step-card" data-step="4">
+                    <div class="step-number">04</div>
+                    <h3>Engine Ignition</h3>
+                    <p>Learning the sequence to start and prepare your vehicle for motion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive" class="interactive">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Command Center</h2>
+                <p>Complete the lessons and master the physics of the road.</p>
+            </div>
+            
+            <div class="cockpit-container glass">
+                <!-- Instruction Assistant -->
+                <div class="assistant-card glass" id="assistant">
+                    <div class="assistant-icon"></div>
+                    <div class="assistant-text">
+                        <h4 id="lesson-title">Phase 1: Setup</h4>
+                        <p id="lesson-desc">Press **W** or **Up Arrow** to accelerate once the engine is on.</p>
+                    </div>
+                </div>
+
+                <!-- Windshield Viewport -->
+                <div class="windshield-frame">
+                    <div class="reflection-overlay"></div>
+                    <canvas id="road-canvas" class="road-canvas"></canvas>
+                    <div class="speed-overlay" id="speed-indicator">0<span>km/h</span></div>
+                </div>
+
+                <!-- Dashboard Interior -->
+                <div class="dashboard-cowl">
+                    <div class="dashboard-controls">
+                        <div class="gauges-cluster">
+                            <div class="gauge tachometer">
+                                <div class="gauge-inner">
+                                    <div class="needle" id="rpm-needle"></div>
+                                    <div class="gauge-label">RPM</div>
+                                </div>
+                            </div>
+                            <div class="engine-buttons">
+                                <button class="btn-engine" id="engine-btn">
+                                    <span class="engine-icon"></span>
+                                    START
+                                </button>
+                                <div class="key-hint">Press <b>E</b></div>
+                            </div>
+                            <div class="gauge speedometer">
+                                <div class="gauge-inner">
+                                    <div class="needle" id="speed-needle"></div>
+                                    <div class="gauge-label">SPEED</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mechanical-controls">
+                            <div class="steering-wrapper">
+                                <img src="steering_wheel.png" alt="Steering Wheel" id="steering-wheel" class="steering-wheel">
+                                <div class="key-hint">Press <b>A / D</b></div>
+                            </div>
+                            <div class="pedal-cluster">
+                                <div class="pedal brake" id="brake-pedal">
+                                    <span>BRAKE</span>
+                                    <div class="key-hint">Press <b>S</b></div>
+                                    <div class="pedal-glow"></div>
+                                </div>
+                                <div class="pedal gas" id="gas-pedal">
+                                    <span>GAS</span>
+                                    <div class="key-hint">Press <b>W</b></div>
+                                    <div class="pedal-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 DriveMaster Academy. Precision in Every Turn.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

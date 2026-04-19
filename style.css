@@ -1,0 +1,569 @@
+:root {
+    --bg-color: #050505;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-color: #00f2ff;
+    --accent-glow: rgba(0, 242, 255, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Glassmorphism Utility */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Buttons */
+.btn-primary, .btn-main {
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: none;
+    background: var(--accent-color);
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover, .btn-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--accent-glow);
+}
+
+.btn-secondary {
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: 1px solid var(--accent-color);
+    background: transparent;
+    color: var(--accent-color);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('hero.png') no-repeat center center/cover;
+    position: relative;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, var(--bg-color) 0%, rgba(5,5,5,0.4) 50%, rgba(5,5,5,0.8) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--accent-color);
+    text-shadow: 0 0 30px var(--accent-glow);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Roadmap Section */
+.lessons {
+    padding: 100px 0;
+    background: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.roadmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    position: relative;
+}
+
+.step-card {
+    padding: 40px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    background: rgba(0, 242, 255, 0.03);
+}
+
+.step-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transition: var(--transition);
+}
+
+.step-card:hover .step-number {
+    color: rgba(0, 242, 255, 0.1);
+}
+
+.step-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.step-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Interactive Cockpit Section */
+.interactive {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at center, #1a1a1a, #050505);
+}
+
+.cockpit-container {
+    width: 100%;
+    margin-top: 50px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+}
+
+/* Assistant */
+.assistant-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    animation: slideInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.assistant-icon {
+    width: 12px;
+    height: 12px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--accent-color);
+    animation: pulse 2s infinite;
+}
+
+.assistant-text h4 {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.assistant-text p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Windshield Viewport */
+.windshield-frame {
+    height: 450px;
+    background: #000;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #111;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.9);
+}
+
+.reflection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%, rgba(255,255,255,0.02) 100%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.road-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.speed-overlay {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-shadow: 0 0 30px var(--accent-glow);
+    font-family: monospace;
+    z-index: 10;
+}
+
+/* Dashboard Interior Cowl */
+.dashboard-cowl {
+    background: linear-gradient(to bottom, #151515, #0a0a0a);
+    padding: 60px 40px;
+    border-radius: 0 0 40px 40px;
+    border-top: 4px solid #222;
+    position: relative;
+    box-shadow: 0 -20px 50px rgba(0,0,0,0.5);
+}
+
+.dashboard-cowl::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 20px;
+    background: #111;
+    border-radius: 50% 50% 0 0;
+    box-shadow: inset 0 2px 5px rgba(255,255,255,0.1);
+}
+
+.speed-overlay span {
+    font-size: 1rem;
+    margin-left: 5px;
+    color: var(--text-secondary);
+}
+
+/* Dashboard Controls */
+.dashboard-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.gauges-cluster {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gauge {
+    width: 180px;
+    height: 180px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    border: 4px solid #222;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.gauge-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.needle {
+    width: 4px;
+    height: 70px;
+    background: var(--accent-color);
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom center;
+    transform: rotate(-120deg);
+    transition: transform 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    box-shadow: 0 0 10px var(--accent-color);
+    border-radius: 10px;
+}
+
+.gauge-label {
+    position: absolute;
+    bottom: 40px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+}
+
+.engine-buttons {
+    text-align: center;
+}
+
+.btn-engine {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #333;
+    background: #111;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-engine.on {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 30px var(--accent-glow);
+    color: var(--accent-color);
+}
+
+.btn-engine:hover {
+    transform: scale(1.05);
+    border-color: #555;
+}
+
+/* Mechanical Controls */
+.mechanical-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.steering-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.steering-wheel {
+    width: 350px;
+}
+
+.pedal-cluster {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.pedal {
+    width: 110px;
+    height: 220px;
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 10px 10px 30px 30px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+    box-shadow: 0 12px 0 #000;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.pedal.active {
+    transform: translateY(10px);
+    box-shadow: 0 2px 0 #000;
+    border-color: var(--accent-color);
+}
+
+.pedal span {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #444;
+}
+
+.pedal.active span {
+    color: var(--accent-color);
+}
+
+.pedal-glow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to top, var(--accent-glow), transparent);
+    transition: height 0.2s;
+}
+
+.pedal.active .pedal-glow {
+    height: 40%;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.key-hint {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+.key-hint b {
+    color: var(--accent-color);
+    background: rgba(255,255,255,0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textReveal {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* Footer */
+.footer {
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar .nav-links { display: none; }
+    .hero h1 { font-size: 3rem; }
+    .simulator-controls { grid-template-columns: 1fr; }
+}

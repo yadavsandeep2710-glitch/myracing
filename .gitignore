@@ -1,0 +1,12 @@
+# Git exclusion for DriveMaster Academy
+.git
+.gemini
+node_modules
+*.md
+!README.md
+!index.html
+!style.css
+!main.js
+!*.png
+!*.jpg
+!*.svg
