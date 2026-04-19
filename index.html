@@ -3,136 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DriveMaster Academy | Learn to Drive Step-by-Step</title>
-    <meta name="description" content="Master the art of car driving with DriveMaster Academy. Step-by-step interactive lessons with animations and premium graphics.">
+    <title>DriveMaster Academy | The Ultimate Indian Driving Experience</title>
+    <meta name="description" content="Master the roads with DriveMaster Academy. The most advanced 3D driving simulator for Indian road rules, RTO prep, and Ghat safety.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Premium Look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">DRIVE<span>MASTER</span></div>
-            <div class="nav-links">
-                <a href="#hero">Home</a>
-                <a href="#lessons">Lessons</a>
+<body class="pro-edition">
+
+    <!-- Header / Navbar -->
+    <header class="navbar glass">
+        <div class="container flex-nav">
+            <div class="logo">
+                <span class="logo-accent">DRIVE</span>MASTER <span class="badge">PRO 2026</span>
+            </div>
+            <nav class="nav-links">
                 <a href="#interactive">Simulator</a>
-                <button class="btn-primary">Get Started</button>
-            </div>
+                <a href="#curriculum">Curriculum</a>
+                <a href="#rto">RTO Center</a>
+                <a href="#about">The Academy</a>
+            </nav>
+            <button class="btn-primary">Enroll Now</button>
         </div>
-    </nav>
+    </header>
 
-    <section id="hero" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="reveal-text">Master the <span>Road.</span></h1>
-            <p class="hero-subtitle">Step-by-step interactive driving education redefined with high-end animations and cinematic precision.</p>
-            <div class="hero-ctas">
-                <a href="#lessons" class="btn-main">Start Learning</a>
-                <a href="#interactive" class="btn-secondary">Explore Simulator</a>
+    <!-- Hero Section: Cinematic Perfection -->
+    <section class="hero-v10">
+        <div class="hero-content container">
+            <h1 class="reveal-text">Master the <span class="gradient-text">Art of Drive.</span></h1>
+            <p class="hero-subtext">The world's most immersive Indian driving academy. From the narrow Ghats of the Himalayas to the chaotic streets of Delhi—master every turn.</p>
+            <div class="hero-actions">
+                <a href="#interactive" class="btn-cta">Start Training</a>
+                <div class="hero-stats">
+                    <div class="stat-item"><span>120K+</span>Students</div>
+                    <div class="stat-item"><span>RTO</span>Certified</div>
+                </div>
             </div>
         </div>
+        <div class="hero-bg-overlay"></div>
     </section>
 
-    <section id="lessons" class="lessons">
+    <!-- Simulation: Absolute Reality -->
+    <section id="interactive" class="interactive-experience">
         <div class="container">
-            <div class="section-header">
-                <h2>The Learning Roadmap</h2>
-                <p>Your journey from beginner to professional driver starts here.</p>
-            </div>
-            <div class="roadmap">
-                <div class="roadmap-track"></div>
-                <div class="step-card" data-step="1">
-                    <div class="step-number">01</div>
-                    <h3>The Cockpit Drill</h3>
-                    <p>Safety first. Master the art of seat, mirror, and seatbelt adjustment.</p>
-                </div>
-                <div class="step-card" data-step="2">
-                    <div class="step-number">02</div>
-                    <h3>Pedal Mastery</h3>
-                    <p>Understanding the delicate balance between the accelerator and the brake.</p>
-                </div>
-                <div class="step-card" data-step="3">
-                    <div class="step-number">03</div>
-                    <h3>Control Center</h3>
-                    <p>Navigating the dashboard and mastering the steering wheel motion.</p>
-                </div>
-                <div class="step-card" data-step="4">
-                    <div class="step-number">04</div>
-                    <h3>Engine Ignition</h3>
-                    <p>Learning the sequence to start and prepare your vehicle for motion.</p>
+            <div class="experience-header">
+                <h2>The Command Center</h2>
+                <div class="status-indicators">
+                    <span class="status-tag pulse">SYSTEMS ACTIVE</span>
+                    <span class="status-tag">LATENCY 12MS</span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="interactive" class="interactive">
-        <div class="container">
-            <div class="section-header">
-                <h2>The Virtual Academy</h2>
-                <p>Complete your daily challenges and master the physics of the road.</p>
-            </div>
-            
-            <div class="cockpit-container glass">
-                <div class="challenge-hud" id="challenge-hud">
-                    <div class="hud-label">CURRENT TASK</div>
-                    <div class="hud-task" id="current-task">1. Start the engine (Press E)</div>
-                </div>
-
-                <!-- Instruction Assistant -->
-                <div class="assistant-card glass" id="assistant">
-                    <div class="assistant-icon"></div>
-                    <div class="assistant-text">
-                        <h4 id="lesson-title">Instructor: Rajan</h4>
-                        <p id="lesson-desc">Welcome to the Ghats! Start the engine to begin your mountain training.</p>
+            <div class="cockpit-viewport glass">
+                <!-- Challenge Overlay -->
+                <div class="mission-hud" id="mission-hud">
+                    <div class="mission-header">CURRENT MISSION</div>
+                    <h3 id="current-task">Initiate Ignition Sequence</h3>
+                    <div class="mission-progress">
+                        <div class="progress-bar" id="task-progress"></div>
                     </div>
                 </div>
 
-                <!-- Windshield Viewport -->
-                <div class="windshield-frame">
-                    <div class="reflection-overlay"></div>
-                    <canvas id="road-canvas" class="road-canvas"></canvas>
-                    <div class="speed-overlay" id="speed-indicator">0<span>km/h</span></div>
+                <!-- Instructor AI -->
+                <div class="instructor-overlay glass" id="instructor">
+                    <div class="inst-profile"></div>
+                    <div class="inst-info">
+                        <h6>INSTRUCTOR RAJAN</h6>
+                        <p id="lesson-desc">Prepare for your first Ghat descent. Clear skies, but the curves are deadly. Key engine to begin.</p>
+                    </div>
                 </div>
 
-                <!-- Dashboard Interior -->
-                <div class="dashboard-cowl">
-                    <div class="dashboard-controls">
-                        <div class="gauges-cluster">
-                            <div class="gauge tachometer">
-                                <div class="gauge-inner">
-                                    <div class="needle" id="rpm-needle"></div>
-                                    <div class="gauge-label">RPM</div>
-                                </div>
-                            </div>
-                            <div class="engine-buttons">
-                                <button class="btn-engine" id="engine-btn">START</button>
-                                <div class="key-hint">Press <b>E</b></div>
-                            </div>
-                            <div class="gauge speedometer">
-                                <div class="gauge-inner">
-                                    <div class="needle" id="speed-needle"></div>
-                                    <div class="gauge-label">SPEED</div>
-                                </div>
+                <!-- Main Canvas -->
+                <div class="simulator-frame">
+                    <div class="bloom-overlay"></div>
+                    <canvas id="road-canvas"></canvas>
+                    <div class="speedo-digital" id="digital-speed">0</div>
+                </div>
+
+                <!-- Pro Dashboard -->
+                <div class="pro-dashboard">
+                    <div class="dashboard-grid">
+                        <div class="gauge-sector">
+                            <div class="gauge-v10">
+                                <div class="gauge-ring"></div>
+                                <div class="needle-v10" id="rpm-needle"></div>
+                                <span class="label">RPM x1000</span>
                             </div>
                         </div>
-
-                        <div class="mechanical-controls">
-                            <div class="steering-wrapper">
-                                <img src="steering_wheel.png" alt="Steering Wheel" id="steering-wheel" class="steering-wheel">
-                                <div class="key-hint">Press <b>A / D</b></div>
+                        <div class="control-sector">
+                            <div class="ignition-wrap">
+                                <button class="btn-ignition" id="engine-btn">IGNITION</button>
+                                <span class="key-hint">PRESS [E]</span>
                             </div>
-                            <div class="pedal-cluster">
-                                <div class="pedal brake" id="brake-pedal">
-                                    <span>BRAKE</span>
-                                    <div class="key-hint">Press <b>S</b></div>
-                                </div>
-                                <div class="pedal gas" id="gas-pedal">
-                                    <span>GAS</span>
-                                    <div class="key-hint">Press <b>W</b></div>
-                                </div>
+                        </div>
+                        <div class="gauge-sector">
+                            <div class="gauge-v10">
+                                <div class="gauge-ring"></div>
+                                <div class="needle-v10" id="speed-needle"></div>
+                                <span class="label">KM/H</span>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mechanical-sector">
+                        <div class="wheel-mount">
+                            <img src="steering_wheel.png" alt="Steering" id="steering-wheel" class="pro-wheel">
+                            <div class="steer-keys">[A] LEFT | RIGHT [D]</div>
+                        </div>
+                        <div class="pedal-mount">
+                            <div class="pro-pedal brake" id="brake-pedal"><span>BRAKE</span></div>
+                            <div class="pro-pedal gas" id="gas-pedal"><span>THRUST</span></div>
                         </div>
                     </div>
                 </div>
@@ -140,75 +122,88 @@
         </div>
     </section>
 
-    <!-- NEW: Learning Hub -->
-    <section id="learning-hub" class="learning-hub">
+    <!-- Academy Curriculum -->
+    <section id="curriculum" class="curriculum">
         <div class="container">
-            <div class="section-header">
-                <h2>Daily Learning Hub</h2>
-                <p>Master these essential modules to clear your Indian RTO exam.</p>
+            <div class="section-title">
+                <h2>Academy Curriculum</h2>
+                <p>A structured 5-module path to professional certification.</p>
             </div>
-            <div class="lesson-grid">
-                <div class="lesson-card glass">
-                    <div class="lesson-icon car-icon"></div>
-                    <h3>01: Cockpit Drill</h3>
-                    <p>Learn the DSSSM routine: Door, Seat, Steering, Seatbelt, Mirrors.</p>
-                    <button class="btn-text">Start Lesson &rarr;</button>
+            <div class="course-roadmap">
+                <div class="roadmap-step completed">
+                    <div class="step-num">01</div>
+                    <div class="step-text">
+                        <h3>Foundation & Safety</h3>
+                        <p>Mirror adjustment, seat positioning, and ignition checks.</p>
+                    </div>
                 </div>
-                <div class="lesson-card glass active">
-                    <div class="lesson-icon hill-icon"></div>
-                    <h3>02: Ghat Driving</h3>
-                    <p>Safety rules for the Himalayas and Western Ghats. Avoid neutral coasting.</p>
-                    <button class="btn-text">Resume Lesson &rarr;</button>
+                <div class="roadmap-step active">
+                    <div class="step-num">02</div>
+                    <div class="step-text">
+                        <h3>Ghat & Mountain Master</h3>
+                        <p>Handling hairpin bends, gear ratios, and engine braking.</p>
+                    </div>
                 </div>
-                <div class="lesson-card glass">
-                    <div class="lesson-icon sign-icon"></div>
-                    <h3>03: RTO Signage</h3>
-                    <p>Mandatory vs Cautionary signs. Prepare for the computer test.</p>
-                    <button class="btn-text">Start Lesson &rarr;</button>
+                <div class="roadmap-step">
+                    <div class="step-num">03</div>
+                    <div class="step-text">
+                        <h3>High-Traffic Simulation</h3>
+                        <p>Defensive driving in heavy traffic. Rickshaw & Truck awareness.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-num">04</div>
+                    <div class="step-text">
+                        <h3>Night & Monsoon Pro</h3>
+                        <p>Visibility management and hydroplaning safety.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: RTO Sign Gallery -->
-    <section id="rto-signs" class="rto-signs">
+    <!-- Sign Center (RTO) -->
+    <section id="rto" class="rto-hub">
         <div class="container">
-            <div class="section-header">
-                <h2>Indian RTO Sign Gallery</h2>
-                <p>Click on any sign to learn its meaning and strict rules.</p>
-            </div>
-            <div class="sign-gallery">
-                <div class="sign-item" title="STOP - Mandatory">
-                    <div class="sign-circle red">STOP</div>
-                    <span>Stop</span>
+            <div class="rto-card glass">
+                <div class="rto-header">
+                    <h2>RTO Mastery Center</h2>
+                    <p>Interactive study for the Indian mandatory road signs.</p>
                 </div>
-                <div class="sign-item" title="NO ENTRY - Mandatory">
-                    <div class="sign-circle red-line"></div>
-                    <span>No Entry</span>
+                <div class="sign-grid">
+                    <div class="exam-sign" title="STOP - Mandatory">
+                        <div class="s-circle red">STOP</div>
+                        <span>Stop</span>
+                    </div>
+                    <div class="exam-sign" title="HAIRPIN RIGHT">
+                        <div class="s-triangle">^</div>
+                        <span>Hairpin Right</span>
+                    </div>
+                    <div class="exam-sign" title="GIVE WAY">
+                        <div class="s-triangle-inv">V</div>
+                        <span>Give Way</span>
+                    </div>
+                    <div class="exam-sign" title="NO PARKING">
+                        <div class="s-circle blue-red">/</div>
+                        <span>No Parking</span>
+                    </div>
                 </div>
-                <div class="sign-item" title="SHARP CURVE - Cautionary">
-                    <div class="sign-triangle">^</div>
-                    <span>Sharp Curve</span>
-                </div>
-                <div class="sign-item" title="HOSPITAL - Informatory">
-                    <div class="sign-square blue">+</div>
-                    <span>Hospital</span>
-                </div>
-                <div class="sign-item" title="SPEED LIMIT 40">
-                    <div class="sign-circle red">40</div>
-                    <span>Speed Limit</span>
-                </div>
+                <button class="btn-sec">Take RTO Practice Test</button>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 DriveMaster Academy. Precision in Every Turn.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">DRIVE<span>MASTER</span></div>
+                <p>&copy; 2026 DriveMaster Academy Pro. Built for Absolute Perfection.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
