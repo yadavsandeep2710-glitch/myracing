@@ -201,8 +201,10 @@ const startApp = () => {
                 state.rpm = Math.max(800, state.rpm - 6000 * dt);
             }
             const stDir = (state.isLeft ? 1 : 0) - (state.isRight ? 1 : 0);
-            state.steering = THREE.MathUtils.lerp(state.steering, stDir * 0.75, dt * 5);
-            state.posX += state.steering * (state.speed/7) * dt;
+            // Slower lerp (3.5) for "Weighted/Heavy" SUV feel
+            state.steering = THREE.MathUtils.lerp(state.steering, stDir * 0.85, dt * 3.5);
+            // Sweeping lateral movement
+            state.posX += state.steering * (state.speed/6.5) * dt;
 
             // Perfection Mission System
             if (state.taskIndex === 0 && state.engineOn) completeTask(1);
@@ -212,6 +214,7 @@ const startApp = () => {
         } else {
             state.speed = Math.max(0, state.speed - 25 * dt);
             state.rpm = THREE.MathUtils.lerp(state.rpm, 0, dt * 8);
+            state.steering = THREE.MathUtils.lerp(state.steering, 0, dt * 2);
         }
 
         // Motion & Scenery Treadmill
@@ -237,9 +240,11 @@ const startApp = () => {
             }
         });
 
-        // Cinematic Camera Dynamics
-        camera.position.x = -state.posX;
-        camera.rotation.z = state.steering * 0.15;
+        // Cinematic Camera Dynamics: Luxury SUV Configuration
+        // 1. Position includes "Lateral Sway" (Body shifting)
+        camera.position.x = -state.posX + (state.steering * 1.5);
+        // 2. Pronounced "Body Roll" (Leaning on soft suspension)
+        camera.rotation.z = state.steering * 0.25;
         camera.fov = 72 + (state.speed/config.maxSpeed) * 15; camera.updateProjectionMatrix();
         camera.position.y = 4.5 + (state.speed/100) * (Math.random()-0.5) * 0.4;
 
@@ -265,7 +270,8 @@ const startApp = () => {
         digiSpeed.innerText = Math.round(state.speed);
         hud.nS.style.transform = `rotate(${(state.speed/config.maxSpeed)*240-120}deg)`;
         hud.nR.style.transform = `rotate(${(state.rpm/7000)*240-120}deg)`;
-        hud.w.style.transform = `rotate(${-state.steering * 190}deg)`;
+        // Visual wheel range expanded for Luxury feel (270 degrees)
+        hud.w.style.transform = `rotate(${-state.steering * 320}deg)`;
         hud.g.classList.toggle('active', state.isGas);
         hud.b.classList.toggle('active', state.isBrake);
     };
