@@ -70,17 +70,22 @@
     <section id="interactive" class="interactive">
         <div class="container">
             <div class="section-header">
-                <h2>The Command Center</h2>
-                <p>Complete the lessons and master the physics of the road.</p>
+                <h2>The Virtual Academy</h2>
+                <p>Complete your daily challenges and master the physics of the road.</p>
             </div>
             
             <div class="cockpit-container glass">
+                <div class="challenge-hud" id="challenge-hud">
+                    <div class="hud-label">CURRENT TASK</div>
+                    <div class="hud-task" id="current-task">1. Start the engine (Press E)</div>
+                </div>
+
                 <!-- Instruction Assistant -->
                 <div class="assistant-card glass" id="assistant">
                     <div class="assistant-icon"></div>
                     <div class="assistant-text">
-                        <h4 id="lesson-title">Phase 1: Setup</h4>
-                        <p id="lesson-desc">Press **W** or **Up Arrow** to accelerate once the engine is on.</p>
+                        <h4 id="lesson-title">Instructor: Rajan</h4>
+                        <p id="lesson-desc">Welcome to the Ghats! Start the engine to begin your mountain training.</p>
                     </div>
                 </div>
 
@@ -102,10 +107,7 @@
                                 </div>
                             </div>
                             <div class="engine-buttons">
-                                <button class="btn-engine" id="engine-btn">
-                                    <span class="engine-icon"></span>
-                                    START
-                                </button>
+                                <button class="btn-engine" id="engine-btn">START</button>
                                 <div class="key-hint">Press <b>E</b></div>
                             </div>
                             <div class="gauge speedometer">
@@ -125,16 +127,76 @@
                                 <div class="pedal brake" id="brake-pedal">
                                     <span>BRAKE</span>
                                     <div class="key-hint">Press <b>S</b></div>
-                                    <div class="pedal-glow"></div>
                                 </div>
                                 <div class="pedal gas" id="gas-pedal">
                                     <span>GAS</span>
                                     <div class="key-hint">Press <b>W</b></div>
-                                    <div class="pedal-glow"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Learning Hub -->
+    <section id="learning-hub" class="learning-hub">
+        <div class="container">
+            <div class="section-header">
+                <h2>Daily Learning Hub</h2>
+                <p>Master these essential modules to clear your Indian RTO exam.</p>
+            </div>
+            <div class="lesson-grid">
+                <div class="lesson-card glass">
+                    <div class="lesson-icon car-icon"></div>
+                    <h3>01: Cockpit Drill</h3>
+                    <p>Learn the DSSSM routine: Door, Seat, Steering, Seatbelt, Mirrors.</p>
+                    <button class="btn-text">Start Lesson &rarr;</button>
+                </div>
+                <div class="lesson-card glass active">
+                    <div class="lesson-icon hill-icon"></div>
+                    <h3>02: Ghat Driving</h3>
+                    <p>Safety rules for the Himalayas and Western Ghats. Avoid neutral coasting.</p>
+                    <button class="btn-text">Resume Lesson &rarr;</button>
+                </div>
+                <div class="lesson-card glass">
+                    <div class="lesson-icon sign-icon"></div>
+                    <h3>03: RTO Signage</h3>
+                    <p>Mandatory vs Cautionary signs. Prepare for the computer test.</p>
+                    <button class="btn-text">Start Lesson &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: RTO Sign Gallery -->
+    <section id="rto-signs" class="rto-signs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Indian RTO Sign Gallery</h2>
+                <p>Click on any sign to learn its meaning and strict rules.</p>
+            </div>
+            <div class="sign-gallery">
+                <div class="sign-item" title="STOP - Mandatory">
+                    <div class="sign-circle red">STOP</div>
+                    <span>Stop</span>
+                </div>
+                <div class="sign-item" title="NO ENTRY - Mandatory">
+                    <div class="sign-circle red-line"></div>
+                    <span>No Entry</span>
+                </div>
+                <div class="sign-item" title="SHARP CURVE - Cautionary">
+                    <div class="sign-triangle">^</div>
+                    <span>Sharp Curve</span>
+                </div>
+                <div class="sign-item" title="HOSPITAL - Informatory">
+                    <div class="sign-square blue">+</div>
+                    <span>Hospital</span>
+                </div>
+                <div class="sign-item" title="SPEED LIMIT 40">
+                    <div class="sign-circle red">40</div>
+                    <span>Speed Limit</span>
                 </div>
             </div>
         </div>

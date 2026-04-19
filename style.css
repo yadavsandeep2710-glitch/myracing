@@ -562,8 +562,47 @@ body {
 }
 
 /* Responsive */
+/* Simulator Challenge HUD */
+.challenge-hud {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    z-index: 100;
+    min-width: 200px;
+}
+.hud-label { color: var(--cyan); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 5px; }
+.hud-task { color: white; font-size: 0.95rem; font-weight: 400; }
+
+/* Learning Hub */
+.learning-hub { padding: 100px 0; background: #080808; }
+.lesson-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+.lesson-card { padding: 40px; border-radius: 20px; text-align: left; transition: var(--transition); }
+.lesson-card:hover { transform: translateY(-10px); border-color: var(--cyan); }
+.lesson-card.active { border-color: var(--cyan); background: rgba(0, 242, 255, 0.05); }
+.lesson-icon { width: 60px; height: 60px; background: var(--cyan); border-radius: 15px; margin-bottom: 25px; }
+
+/* RTO Signs */
+.rto-signs { padding: 100px 0; background: #0a0a0a; }
+.sign-gallery { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 50px; }
+.sign-item { text-align: center; cursor: help; }
+.sign-item span { display: block; margin-top: 15px; font-size: 0.9rem; color: #888; }
+
+.sign-circle { width: 80px; height: 80px; border-radius: 50%; border: 6px solid #ff3b3b; background: white; color: black; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; }
+.sign-circle.red-line { position: relative; }
+.sign-circle.red-line::before { content: ''; position: absolute; width: 100%; height: 6px; background: #ff3b3b; transform: rotate(45deg); }
+
+.sign-triangle { width: 0; height: 0; border-left: 45px solid transparent; border-right: 45px solid transparent; border-bottom: 80px solid #ff3b3b; position: relative; color: white; }
+.sign-triangle::after { content: '^'; position: absolute; left: -5px; top: 30px; font-size: 2rem; }
+
+.sign-square { width: 80px; height: 80px; background: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: 400; }
+
 @media (max-width: 768px) {
     .navbar .nav-links { display: none; }
     .hero h1 { font-size: 3rem; }
     .simulator-controls { grid-template-columns: 1fr; }
+    .challenge-hud { display: none; }
 }
